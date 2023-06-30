@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-4">
+            <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                  <div class="col-sm-3">
+                    <label class="sr-only" for="box1">Box 1</label>
+                    <input type="number" (blur)="patchValueforbox2()" class="form-control" id="box1" placeholder="Box 1" ngModel name="box1" #b1="ngModel">
+                    <span class="text-danger mt-2" *ngIf="b1.value > 100">Incorrect value</span>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="sr-only" for="box2">Box 2</label>
+                    <input type="number" (blur)="patchValueforbox1()" class="form-control" id="box2" placeholder="Box 2" ngModel name="box2" #b2="ngModel">
+                    <span class="text-danger mt-2" *ngIf="b2.value > 100">Incorrect value</span>
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Create Chart</button>
+                  </div>
+                </div>
+              </form>
+              <div style="position:absolute;"> 
+                <canvas id = "myChart"></canvas>
+              </div>
+              
+        </div>
+    </div>
+</div>
+
+
+
